@@ -2,7 +2,7 @@
 React gallery app that uses flickr api
 
 ## INSTALLATION
-    $ git clone `https://github.com/TaylanMun/react-gallery-app.git`
+    $ git clone https://github.com/TaylanMun/react-gallery-app.git
     $ cd react-gallery-app
     $ npm install
 ## Added For API
