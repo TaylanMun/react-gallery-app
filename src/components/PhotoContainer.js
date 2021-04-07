@@ -22,6 +22,7 @@ const PhotoContainer = ({ apiKey }) => {
     } else {
       setQuery("react");
     }
+    // I preferred to do automatic loading true every time the url is changed
     setLoading(true);
   }, [params.query]);
 
