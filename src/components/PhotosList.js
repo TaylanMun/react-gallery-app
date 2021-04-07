@@ -6,7 +6,10 @@ import Loading from "./Loading";
 const PhotosList = ({ query, photos,loading }) => {
   let photoHtml;
   // if there is a photo
-  if (photos.length) {
+  
+  if(loading){
+    photoHtml = <Loading />;
+  }else if (photos.length) {
     photoHtml = photos.map((photo) => {
       const url = `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_b.jpg`;
       return <li key={photo.id}>
@@ -15,11 +18,8 @@ const PhotosList = ({ query, photos,loading }) => {
     });
   } else {
     // if there is no search return loading false
-    if(loading){
-      photoHtml = <Loading />;
-    }else{
-      photoHtml = <NoResults />;
-    }
+    photoHtml = <NoResults />;
+
   }
   return (
     <div className="photo-container">

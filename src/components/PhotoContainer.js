@@ -18,10 +18,11 @@ const PhotoContainer = ({ apiKey }) => {
   // if change params.query, this works and change query state
   useEffect(() => {
     if (params.query) {
-      setQuery(params.query)
-    }else{
+      setQuery(params.query);
+    } else {
       setQuery("react");
     }
+    setLoading(true);
   }, [params.query]);
 
   // If change query, this works and request to api.
@@ -37,8 +38,6 @@ const PhotoContainer = ({ apiKey }) => {
       getPhotos(query);
     }
   }, [query, apiKey]);
-
-
 
   return (
     <React.Fragment>
